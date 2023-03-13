@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Filmes</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Cadastro de Filmes</h1>
+      <section id="registra-filme">
+        <form action="">
+          <label for="titulo-filme">Título:</label>
+          <input type="text" class="titulo-filme" id="titulo-filme" />
+          <label for="nota-filme">Nota:</label>
+          <input
+            type="number"
+            min="0"
+            max="5"
+            class="nota-filme"
+            id="nota-filme"
+          />
+          <label for="duracao-filme">Duração em minutos:</label>
+          <input
+            type="number"
+            min="0"
+            class="duracao-filme"
+            id="duracao-filme"
+          />
+
+          <button
+            type="button"
+            onclick="registrarFilme()"
+            id="registra-filme-btn"
+          >
+            Cadastrar
+          </button>
+        </form>
+      </section>
+    </header>
+    <main>
+      <div id="conteiner-filmes"></div>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
