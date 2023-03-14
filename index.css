@@ -1,14 +1,115 @@
-.card {
-    display: flex;
-    flex-direction: column;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+html {
+  background-color: rgb(1, 24, 43);
+}
+h1 {
+  margin: 20px;
+  color: white;
+}
+form {
+  background-color: #ae841a;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+}
+form label {
+  padding: 2px;
+}
+#pesquisa {
+  background-color: #ae841a;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+}
+#pesquisa input {
+  border: none;
+  justify-content: center;
+  outline: none;
+  background-color: #ae841a;
 }
 
-.card__cover {
-    height: 20rem;
-    width: 100%;
+#titulo-filme {
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  background-color: #ae841a;
+  margin: 2px;
+}
+#duracao-filme {
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  background-color: #ae841a;
+  width: 50px;
+  flex: 1;
+  margin: 2px;
+}
+#nota-filme {
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  background-color: #ae841a;
+  margin: 2px;
+  padding: px;
+}
+#registra-filme-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: rgb(1, 24, 43);
+  color: white;
+}
+#registra-filme-btn:hover {
+  background-color: #c0c0c0;
+  cursor: pointer;
 }
 
-.card__content {
-    /* Take available height */
-    flex: 1;
+#conteiner-filmes {
+  display: flex;
+  flex-wrap: wrap;
+}
+div .cartao {
+  border: 2px solid #c0c0c0;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 5px;
+  background-color: #c0c0c0;
+  max-width: 160px;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+div .cartao:hover {
+  background-color: #ae841a;
+  cursor: pointer;
+}
+
+div .detalhes-filme {
+  background-color: #ae841a;
+  padding: 5px;
+  border-radius: 10px;
+  height: auto;
+}
+div .detalhes-filme h3 {
+  text-transform: uppercase;g
+  font-size: 18px;
+}
+
+div .detalhes-filme p {
+  font-weight: bold;
+}
+
+div .detalhes-filme p span {
+  font-weight: normal;
+}
+.imagem-filme img {
+  width: 160px;
+  border-radius: 10px;
+  
 }
