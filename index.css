@@ -75,15 +75,16 @@ form label {
   flex-wrap: wrap;
 }
 div .cartao {
-  border: 2px solid #c0c0c0;
+  /* border: 2px solid #c0c0c0; */
   border-radius: 10px;
   margin: 10px;
   padding: 5px;
-  background-color: #c0c0c0;
+  /* background-color: #c0c0c0; */
   max-width: 160px;
   width: auto;
   height: auto;
   overflow: hidden;
+  position: relative;
 }
 div .cartao:hover {
   background-color: #ae841a;
@@ -109,7 +110,80 @@ div .detalhes-filme p span {
   font-weight: normal;
 }
 .imagem-filme img {
-  width: 160px;
+  width: 100%;
   border-radius: 10px;
+  object-fit: cover;
   
+}
+/* #assistido-favorito button {
+
+  background-color: #c0c0c0;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+}
+
+
+#btn-assistido {
+width: 20px;
+background-color: #c0c0c0;
+border: none;
+outline: none;
+
+} */
+
+.botao-assistido{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 10px;
+  height: 25px;
+  position:relative;
+  top: 1px;
+  left: 5%;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+  padding: 15px;
+  
+}
+
+.botao-favorito {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 25px;
+  height: 23px;
+  position:relative;
+  top:11px;
+  left: 20%;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+  
+  
+  
+}
+
+.botao-assistido {
+  background-image: url("imagem/eye-closed.svg");
+  background-repeat: no-repeat;
+}
+
+.botao-assistido.assistido {
+  background-image: url("imagem/eye.svg");
+  background-repeat: no-repeat;
+}
+
+.botao-favorito {
+  background-image: url("imagem/heart-3-line.svg");
+  background-repeat: no-repeat;
+  
+}
+
+.botao-favorito.favoritado {
+  background-image: url("imagem/heart-3-fill.svg");
+  background-repeat: no-repeat;
 }

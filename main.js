@@ -37,6 +37,27 @@ function filmesRegistrados(titulo) {
   return filmes.find((filme) => filme.titulo === titulo);
 }
 
+// let imgAssistido = "/imagem/eye.svg"
+// let imgNAssistido = "/imagem/eye-closed.svg"
+// function btnClicado() {
+//   document.getElementById("btn-assistido").src = imgNAssistido;
+//   let img = imgNAssistido;
+//   imgNAssistido = imgAssistido;
+//   imgAssistido = img;
+
+// }
+
+// const botaoAssistido = document.getElementsByClassName[0]("botao-assistido");
+// const botaoFavorito = document.getElementsByClassName[0]("botao-favorito");
+
+// botaoAssistido.addEventListener("click", function () {
+//   this.classList.toggle("assistido");
+// });
+
+// botaoFavorito.addEventListener("click", function () {
+//   this.classList.toggle("favoritado");
+// });
+
 async function listarFilmes(filmes) {
   const arrayHTML = await Promise.all(
     filmes.map(
@@ -49,8 +70,10 @@ async function listarFilmes(filmes) {
             <h3>${filme.titulo}</h3>
             <p class="nota">Nota: <span>${filme.nota}</span></p>
             <p class="duracao-filme">
-              Duração: <span>${filme.duracaoFilme}</span>
+              Duração: <span>${filme.duracaoFilme} min.</span>
             </p>
+            <button class="botao-assistido" id="botao-assistido"></button>
+            <button onclick="filmeFavoritado()" class="botao-favorito" id="botao-favorito"></button>
           </div>
         </div>
    `
@@ -58,6 +81,7 @@ async function listarFilmes(filmes) {
   );
   document.getElementById("conteiner-filmes").innerHTML = arrayHTML.join("");
 }
+
 function filtarFilmes(filtro) {
   console.log(filtro);
   const filmesFiltrados = filmes.filter((filme) =>
@@ -77,6 +101,28 @@ async function pegarPoster(tituloFilme) {
   );
 
   const json = await imgPoster.json();
-  console.log(json);
-  return json.results.length ? url + json.results[0].poster_path : "/imagem/no_image.jpg";
+  return json.results.length
+    ? url + json.results[0].poster_path
+    : "/imagem/no_image.jpg";
 }
+
+
+function filmeFavoritado() {
+  const iconElement = document.getElementById("botao-favorito");
+  const filmesFavoritos = filmes.filter((filme) => filme.favorito);
+  if (filmesFavoritos.length >= 3) {
+    alert("Já existem três filmes favoritos");
+    return;
+  }
+
+  if (!filmesFavoritos.favorito) {
+    filmesFavoritos.favorito = true;
+
+    iconElement.classList.add("favoritado");
+  } else {
+    filmesFavoritos.favorito = false;
+
+    iconElement.classList.remove("favoritado");
+  }
+};
+console.log(filmes);
